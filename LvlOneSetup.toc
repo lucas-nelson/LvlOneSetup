@@ -1,0 +1,8 @@
+## Interface: 20504
+## Title: LvlOneSetup
+## Version: v1.0.0
+## Notes: Better interface settings for fresh characters
+## Author: lug
+
+ConsoleVariables.lua
+LvlOneSetup.lua
