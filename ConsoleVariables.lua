@@ -6,6 +6,7 @@ local _,addon = ...
 addon.config_cache = [[
 SET autoLootDefault "1"
 SET cameraSmoothStyle "0"
+SET doNotFlashLowHealthWarning "0"
 SET enableFloatingCombatText "1"
 SET instantQuestText "1"
 SET mouseInvertPitch "1"
