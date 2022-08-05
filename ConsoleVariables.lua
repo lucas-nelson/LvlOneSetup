@@ -5,6 +5,7 @@ local _,addon = ...
 
 addon.config_cache = [[
 SET autoLootDefault "1"
+SET cameraSmoothStyle "0"
 SET enableFloatingCombatText "1"
 SET instantQuestText "1"
 SET mouseInvertPitch "1"
@@ -13,4 +14,5 @@ SET showTargetOfTarget "1"
 SET showTutorials "0"
 SET statusText "1"
 SET statusTextDisplay "BOTH"
+SET UnitNameNPC "1"
 ]]
