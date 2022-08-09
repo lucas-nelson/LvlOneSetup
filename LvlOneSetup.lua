@@ -44,7 +44,7 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			end)
 
 			StopCinematic()
-			CameraZoomOut(50)
+			CameraZoomOut(30)
 		end
 	elseif event == "ADDON_LOADED" and arg1 == addonName then
 		if UnitLevel('player') == 1 and UnitXP("player") == 0 then
