@@ -15,7 +15,7 @@ Frame:RegisterEvent("CINEMATIC_START")
 
 Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	if event == "CINEMATIC_START" then
-		if UnitLevel('player') == 1 and UnitXP("player") == 0 then
+		if UnitLevel('player') == 1 or (UnitClass('player') == 'Death Knight' and UnitLevel('player') == 55) then
 			-- show all the action bars
 			local a=true SetActionBarToggles(a,a,a,a,0) SHOW_MULTI_ACTIONBAR_1=a SHOW_MULTI_ACTIONBAR_2=a SHOW_MULTI_ACTIONBAR_3=a SHOW_MULTI_ACTIONBAR_4 = a MultiActionBar_Update()
 
@@ -38,7 +38,7 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 			-- uncheck the General and LookingForGroup chat channels
 			-- needs to be on a delay otherwise something else adds them after
-			C_Timer.After(2, function()
+			C_Timer.After(10, function()
 				ChatFrame_RemoveChannel(DEFAULT_CHAT_FRAME, "General")
 				ChatFrame_RemoveChannel(DEFAULT_CHAT_FRAME, "LookingForGroup")
 			end)
@@ -47,7 +47,7 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			CameraZoomOut(30)
 		end
 	elseif event == "ADDON_LOADED" and arg1 == addonName then
-		if UnitLevel('player') == 1 and UnitXP("player") == 0 then
+		if UnitLevel('player') == 1 or (UnitClass('player') == 'Death Knight' and UnitLevel('player') == 55) then
 			local _ = addon.config_cache:gsub("([^\n\r]-)[\n\r]",function(c)
 				var,value = string.match(c,"%s*SET%s+(%a+)%s+\"(.*)\"")
 				if var and var ~= "" then
@@ -55,9 +55,6 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 				end
 				return ""
 			end)
-		end
-	elseif event == "PLAYER_ALIVE" then
-		if UnitLevel('player') == 1 and UnitXP("player") == 0 then
 		end
 	end
 end)
