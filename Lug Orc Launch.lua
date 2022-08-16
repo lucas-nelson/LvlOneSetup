@@ -13,7 +13,7 @@ step << !Orc !Troll
 .goto Durotar,43.3,68.5
     +You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in
 step
-    .xp 5 >> Grind to level 5
+    .xp 5 >> Grind to level 5, and 2s 90c
 step
     #completewith next
     .goto Durotar,44.7,52.5,15
@@ -50,12 +50,13 @@ step
     >>Kill Kul Tiras mobs. Loot them for Scraps
     .complete 791,1 --Canvas Scraps (8)
 step
-    .xp 5+1862 >> Grind to 1862+/2800xp
+    .xp 5+1862 >> Grind to 1862+/2800xp, 1s 90c would be ideal
 step
     #completewith next
     .goto Durotar,49.9,40.3
     .hs >> Hearth back to Razor Hill
 step
+    .goto Durotar,49.9,40.3
     .turnin 791 >>Turn in Carry Your Weight
 step
     .goto Durotar,51.1,42.4
