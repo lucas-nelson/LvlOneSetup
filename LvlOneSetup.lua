@@ -17,7 +17,22 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	if event == "CINEMATIC_START" then
 		if UnitLevel('player') == 1 or (UnitClass('player') == 'Death Knight' and UnitLevel('player') == 55) then
 			-- show all the action bars
-			local a=true SetActionBarToggles(a,a,a,a,0) SHOW_MULTI_ACTIONBAR_1=a SHOW_MULTI_ACTIONBAR_2=a SHOW_MULTI_ACTIONBAR_3=a SHOW_MULTI_ACTIONBAR_4 = a MultiActionBar_Update()
+			-- update state for after a reload
+			SetActionBarToggles(true, true, true, true, 1)
+
+			-- update live in-game state
+			SHOW_MULTI_ACTIONBAR_1 = true
+			SHOW_MULTI_ACTIONBAR_2 = true
+			SHOW_MULTI_ACTIONBAR_3 = true
+			SHOW_MULTI_ACTIONBAR_4 = true
+
+			-- update live "always show" state
+			MultiActionBar_UpdateGrid("MultiBarBottomLeft", true);
+			MultiActionBar_UpdateGrid("MultiBarBottomRight", true);
+			MultiActionBar_UpdateGrid("MultiBarRight", true);
+			MultiActionBar_UpdateGrid("MultiBarLeft", true);
+
+			MultiActionBar_Update()
 
 			-- set account / character variables
 			for var,value in pairs(consoleVariables) do
