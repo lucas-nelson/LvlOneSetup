@@ -10,8 +10,18 @@ RXPGuides.RegisterGuide([[
 step << !Orc !Troll
     #sticky
     #completewith next
-.goto Durotar,43.3,68.5
+    .goto Durotar,43.3,68.5
     +You have selected a guide meant for Orcs and Trolls. You should choose the same starter zone that you start in
+step
+    #sticky
+    #completewith next
+    +Kill Boars for 10c+ of vendor trash
+step
+    .goto Durotar,42.6,67.3
+    .vendor >>Vendor trash. Vendor armor if less than 10c
+step << Warrior
+    .goto Durotar,42.9,69.4
+    .train 6673 >>Train Battle Shout
 step
     .xp 5 >> Grind to level 5, and 2s 90c
 step
