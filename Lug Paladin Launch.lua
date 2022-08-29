@@ -119,15 +119,16 @@ step
     .goto Eversong Woods,48.2,46.0
     >> Talk to Aeldon Sunbrand
     .turnin 8463 >> Turn in Unstable Mana Crystals
-step << Paladin
+    .accept 9352 >> Accept Darnassian Intrusions
+step
+    .goto Eversong Woods,48.5,45.9
+    >> Buy Gladius and equip it
+    .collect 2488,1 --Collect Gladius
+step
+    .money <0.0095
     >> Go inside
     .goto Eversong Woods,48.4,46.5
     .train 639 >>Train Holy Light r2
-step << Warrior/Paladin
-    .goto Eversong Woods,48.5,45.9
-    .money <0.0509
-    >> Buy Gladius and equip it
-    .collect 2488,1 --Collect Gladius
 step
     >> Leave Falconwing Square and talk to Ley-Keeper Caidanis
     .goto Eversong Woods,44.6,53.1
