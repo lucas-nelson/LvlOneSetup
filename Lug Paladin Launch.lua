@@ -51,6 +51,11 @@ step
     .complete 8345,1 --Collect Shrine of Dath'Remar Read (x1)
 step
     .xp 3+320 >> Grind to 320 / 1400
+step
+    #label sliverhs << wotlk
+    #completewith next
+    .goto Eversong Woods,38.7,20.3
+    .hs >> Hearth to Sunstrider Isle
 step << Paladin/Rogue
     .goto Eversong Woods,38.7,20.3
     .vendor >>Go inside, vendor trash
@@ -76,4 +81,55 @@ step
     .accept 8350 >> Accept Completing the Delivery
 step
     .goto Eversong Woods,47.3,46.3,30 >> Run to Falconwing Square
+step
+    >> Talk to Magister Jaronis
+    .goto Eversong Woods,47.3,46.3
+    .accept 8472 >> Accept Major Malfunction
+step
+    .goto Eversong Woods,47.7,47.2,20 >>Go in the inn
+step << BloodElf
+    >> Talk to Innkeeper Delaniel
+    .goto Eversong Woods,48.2,47.7
+    .turnin 8350 >> Turn in Completing the Delivery
+    .home >> Set your Hearthstone to Falconwing Square
+step
+    #completewith next
+    .goto Eversong Woods,47.7,47.2,10 >>Go outside
+step
+    >> Talk to the Wanted Poster
+    .goto Eversong Woods,48.1,46.2
+    .accept 8463 >> Accept Unstable Mana Crystals
+step
+    >>Loot Arcane Cores from the Arcane Patrollers. Loot the Unstable Mana Crystals from boxes on the ground in the area
+    .goto Eversong Woods,46.8,41.1,40,0
+    .goto Eversong Woods,46.7,34.9,40,0
+    .goto Eversong Woods,40.6,37.9,40,0
+    .goto Eversong Woods,44.4,45.8,40,0
+    .goto Eversong Woods,46.8,39.5
+    .complete 8472,1 --Collect Arcane Core (x6)
+    .complete 8463,1 --Collect Unstable Mana Crystal (x6)
+step
+    .xp 5+1450 >> Grind to 1450+/2800xp
+step
+    .goto Eversong Woods,47.3,46.3
+    >> Talk to Maigster Jaronis
+    .turnin 8472 >> Turn in Major Malfunction
+    .accept 8895 >> Accept Delivery to the North Sanctum
+step
+    .goto Eversong Woods,48.2,46.0
+    >> Talk to Aeldon Sunbrand
+    .turnin 8463 >> Turn in Unstable Mana Crystals
+step << Paladin
+    >> Go inside
+    .goto Eversong Woods,48.4,46.5
+    .train 639 >>Train Holy Light r2
+step << Warrior/Paladin
+    .goto Eversong Woods,48.5,45.9
+    .money <0.0509
+    >> Buy Gladius and equip it
+    .collect 2488,1 --Collect Gladius
+step
+    >> Leave Falconwing Square and talk to Ley-Keeper Caidanis
+    .goto Eversong Woods,44.6,53.1
+    >>Move onto step 17 of the 6-10 Eversong Woods guide
 ]])
