@@ -6,9 +6,9 @@ local consoleVariables = {};
 local Frame = CreateFrame("Frame");
 
 local PlayerX = -160
-local PlayerY = -200
+local PlayerY = -140
 local TargetX = 160
-local TargetY = -200
+local TargetY = -140
 
 Frame:RegisterEvent("ADDON_LOADED")
 Frame:RegisterEvent("CINEMATIC_START")
@@ -50,6 +50,19 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 
 			-- check the "Experience" message type
 			ChatFrame_AddMessageGroup(DEFAULT_CHAT_FRAME, "COMBAT_XP_GAIN")
+
+			-- reduce font size
+			local fontFile, _, fontFlags = DEFAULT_CHAT_FRAME:GetFont();
+			DEFAULT_CHAT_FRAME:SetFont(fontFile, 10, fontFlags);
+
+			-- set chat window position and size
+			DEFAULT_CHAT_FRAME:ClearAllPoints()
+			DEFAULT_CHAT_FRAME:SetPoint("BOTTOMLEFT", UIParent, 3, 32)
+			DEFAULT_CHAT_FRAME:SetHeight(320)
+			DEFAULT_CHAT_FRAME:SetWidth(550)
+
+			-- chat window somewhat opaque
+			FCF_SetWindowAlpha(DEFAULT_CHAT_FRAME, 0.4)
 
 			-- uncheck the General and LookingForGroup chat channels
 			-- needs to be on a delay otherwise something else adds them after

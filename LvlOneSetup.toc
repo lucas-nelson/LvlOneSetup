@@ -1,7 +1,7 @@
-## Interface: 20504
+## Interface: 11403
 ## Title: LvlOneSetup
-## Version: v1.0.0
-## Notes: Better interface settings for fresh characters
+## Version: v1.1.0
+## Notes: Better interface settings for Era fresh characters
 ## Author: lug
 
 ConsoleVariables.lua
