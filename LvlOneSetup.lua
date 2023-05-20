@@ -16,6 +16,8 @@ Frame:RegisterEvent("CINEMATIC_START")
 Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 	if event == "CINEMATIC_START" then
 		if UnitLevel('player') == 1 or (UnitClass('player') == 'Death Knight' and UnitLevel('player') == 55) then
+			print("LvlOneSetup: setting up...")
+
 			-- show all the action bars
 			-- update state for after a reload
 			SetActionBarToggles(true, true, true, true, 1)
@@ -52,6 +54,9 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			ChatFrame_AddMessageGroup(DEFAULT_CHAT_FRAME, "COMBAT_XP_GAIN")
 
 			-- reduce font size
+			local fontFile, _, fontFlags = ChatFrame2:GetFont();
+			ChatFrame2:SetFont(fontFile, 10, fontFlags);
+
 			local fontFile, _, fontFlags = DEFAULT_CHAT_FRAME:GetFont();
 			DEFAULT_CHAT_FRAME:SetFont(fontFile, 10, fontFlags);
 
@@ -60,9 +65,12 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			DEFAULT_CHAT_FRAME:SetPoint("BOTTOMLEFT", UIParent, 3, 32)
 			DEFAULT_CHAT_FRAME:SetHeight(320)
 			DEFAULT_CHAT_FRAME:SetWidth(550)
+			DEFAULT_CHAT_FRAME:SetUserPlaced(true)
 
 			-- chat window somewhat opaque
 			FCF_SetWindowAlpha(DEFAULT_CHAT_FRAME, 0.4)
+
+			FCF_SavePositionAndDimensions(DEFAULT_CHAT_FRAME)
 
 			-- uncheck the General and LookingForGroup chat channels
 			-- needs to be on a delay otherwise something else adds them after
