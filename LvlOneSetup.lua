@@ -63,8 +63,8 @@ Frame:SetScript("OnEvent",function(self,event,arg1,arg2,arg3,arg4)
 			-- set chat window position and size
 			DEFAULT_CHAT_FRAME:ClearAllPoints()
 			DEFAULT_CHAT_FRAME:SetPoint("BOTTOMLEFT", UIParent, 3, 32)
-			DEFAULT_CHAT_FRAME:SetHeight(320)
-			DEFAULT_CHAT_FRAME:SetWidth(550)
+			DEFAULT_CHAT_FRAME:SetHeight(300)
+			DEFAULT_CHAT_FRAME:SetWidth(450)
 			DEFAULT_CHAT_FRAME:SetUserPlaced(true)
 
 			-- chat window somewhat opaque
