@@ -22,6 +22,6 @@ SET showTimestamps "%H:%M:%S "
 SET statusText "1"
 SET statusTextDisplay "BOTH"
 SET threatShowNumeric "1"
-SET uiScale "1.0"
+SET uiScale "0.75"
 SET UnitNameNPC "1"
 ]]
